@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Surat dan ucapan Hari Guru Nasional" />
+  <title>Selamat Hari Guru Nasional</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="confetti"></canvas>
+
+  <button id="btnMusik" class="music-toggle" aria-label="Putar atau jeda musik" aria-pressed="false">🔇</button>
+  <audio id="backsound" src="assets/musik.mp3" loop preload="auto"></audio>
+
+  <main class="page">
+
+    <!-- ===== Bagian 1: Beranda + Amplop ===== -->
+    <section id="beranda" class="hero-section">
+      <div class="apple" aria-hidden="true">🍎</div>
+      <h1>Selamat Hari Guru Nasional</h1>
+      <p class="subtitle">25 November</p>
+
+      <div class="envelope-wrap">
+        <button id="btnBuka" class="envelope" aria-label="Buka surat">
+          <span class="envelope-body"></span>
+          <span class="envelope-flap"></span>
+        </button>
+        <p class="hint">Ketuk amplop untuk membuka surat</p>
+      </div>
+
+      <a href="#harapan" class="scroll-cue">Geser ke bawah ↓</a>
+    </section>
+
+    <!-- ===== Bagian 2: Kartu Harapan ===== -->
+    <section id="harapan" class="section reveal-on-scroll">
+      <h2>Kartu Harapan</h2>
+      <p class="section-desc">Ketuk setiap kartu untuk membuka harapan kecil dari kami.</p>
+
+      <div class="cards">
+        <button class="flip-card" aria-pressed="false">
+          <span class="flip-inner">
+            <span class="flip-front"><span class="big-emoji">🌱</span>Ketuk</span>
+            <span class="flip-back">Semoga selalu diberi kesehatan dan semangat dalam mengajar.</span>
+          </span>
+        </button>
+
+        <button class="flip-card" aria-pressed="false">
+          <span class="flip-inner">
+            <span class="flip-front"><span class="big-emoji">📖</span>Ketuk</span>
+            <span class="flip-back">Semoga setiap ilmu yang Bapak bagikan selalu menjadi amal jariyah.</span>
+          </span>
+        </button>
+
+        <button class="flip-card" aria-pressed="false">
+          <span class="flip-inner">
+            <span class="flip-front"><span class="big-emoji">☀️</span>Ketuk</span>
+            <span class="flip-back">Semoga hari-hari Bapak selalu dipenuhi kebahagiaan dan keberkahan.</span>
+          </span>
+        </button>
+
+        <button class="flip-card" aria-pressed="false">
+          <span class="flip-inner">
+            <span class="flip-front"><span class="big-emoji">🌟</span>Ketuk</span>
+            <span class="flip-back">Terima kasih sudah percaya pada setiap murid, bahkan saat kami belum percaya pada diri sendiri.</span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== Bagian 3: Hiasan Interaktif ===== -->
+    <section id="hiasan" class="section reveal-on-scroll">
+      <h2>Hiasan Kecil</h2>
+      <p class="section-desc">Ketuk ikon-ikon ini untuk melihat kejutan kecil, dan geser daun di kotak bawah.</p>
+
+      <div class="decor-row">
+        <button class="pop-item" aria-label="Apel">🍎</button>
+        <button class="pop-item" aria-label="Buku">📚</button>
+        <button class="pop-item" aria-label="Bintang">⭐</button>
+        <button class="pop-item" aria-label="Pensil">✏️</button>
+        <button class="pop-item" aria-label="Bunga">🌸</button>
+      </div>
+
+      <div class="playground" id="playground">
+        <span class="sticker" id="daun" role="img" aria-label="Daun yang bisa digeser">🍃</span>
+        <span class="playground-hint">Geser daun ini ke mana saja</span>
+      </div>
+    </section>
+
+    <!-- ===== Bagian 4: Penutup ===== -->
+    <section id="penutup" class="section closing reveal-on-scroll">
+      <h2>Terima Kasih</h2>
+      <p class="section-desc">Untuk setiap sabar, setiap ilmu, dan setiap waktu yang Bapak berikan untuk kami.</p>
+      <a href="#beranda" class="btn-kembali">Kembali ke atas ↑</a>
+    </section>
+
+    <footer>
+      <p>Dibuat dengan penuh rasa hormat untuk para guru.</p>
+    </footer>
+  </main>
+
+  <!-- ===== Popup surat ===== -->
+  <div id="overlay" class="overlay" aria-hidden="true">
+    <article id="surat" class="letter" role="dialog" aria-modal="true" aria-labelledby="judulSurat">
+      <button id="btnTutup" class="close" aria-label="Tutup surat">&times;</button>
+
+      <div class="letter-paper">
+        <p class="kepada reveal" style="--d:0">Kepada Yth.</p>
+        <p class="nama reveal" style="--d:1">Bapak Idris</p>
+
+        <h2 id="judulSurat" class="judul reveal" style="--d:2">Selamat Hari Guru Nasional</h2>
+
+        <p class="reveal" style="--d:3">Dengan penuh rasa hormat, saya ingin mengucapkan terima kasih yang sebesar-besarnya atas segala bimbingan dan ilmu yang Bapak berikan selama ini.</p>
+
+        <p class="reveal" style="--d:4">Kesabaran Bapak dalam mendidik, ketulusan dalam membimbing, dan semangat yang tak pernah surut telah menjadi cahaya yang menerangi langkah kami. Apa yang Bapak ajarkan bukan hanya pelajaran di kelas, tetapi juga nilai-nilai yang akan kami bawa seumur hidup.</p>
+
+        <p class="reveal" style="--d:5">Semoga Bapak senantiasa diberikan kesehatan, kebahagiaan, dan keberkahan dalam setiap pengabdian. Semoga setiap ilmu yang Bapak bagikan menjadi amal jariyah yang terus mengalir.</p>
+
+        <p class="reveal salam" style="--d:6">Dengan penuh hormat dan rasa terima kasih,</p>
+        <p class="reveal ttd" style="--d:7">Murid-muridmu</p>
+      </div>
+    </article>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
